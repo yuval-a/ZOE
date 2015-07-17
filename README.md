@@ -71,8 +71,8 @@ Except a `template` object, ZOE also requires a `name` for the entire component.
 ```javascript
 TodoItem = (function () {
 
-  var template = {
-  	element: "div", classes: "todoItem", children: {
+   var template = {
+      element: "div", classes: "todoItem", children: {
             title:        { element: "input",  attributes: { type:"text" }, content: "Description of to do item" },
 	    editButton:   { element: "button", content: "Edit" },
 	    deleteButton: { element: "button", content: "Delete" }
@@ -92,7 +92,7 @@ You use the `ZOE.load` function to build your component. Pass the closure you de
 `ZOE.load (TodoItem);`
 Once the `TodoItem` component is loaded - there will be a new object under the ZOE object in memory: 
 `ZOE.TodoItem`, and under that there will be an `element` object - that element object is a DOM object representing the "prototype" of the component in DOM form, and is used when rendering instances from it to the document.
-You can also see the 'render' function, which is used to render an instance of the component to a new DOM element, ready to be attached to your document. Each component will have its own 'render' function.
+You can also see the `render` function, which is used to render an instance of the component to a new DOM element, ready to be attached to your document. Each component will have its own `render` function.
 
 You can put the definition and load function in the same single file (e.g. `TodoItem.js`), and include it in the head after ZOE. This will (usually) have your component ready for rendering, even before the browser finishes rendering the `body` part of your HTML. For complex components it can take longer.
 In any case, you can listen to the `ZOEReady` event, on your document, that will be triggered once the loading is complete.
