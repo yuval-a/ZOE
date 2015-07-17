@@ -46,11 +46,6 @@ Each object in the template defines an HTML element, and can have several proper
 * `classes`: is used to specify class names for the element (the value for the `class` attribute)
 * `children`: is used to define the element's children. You can have as much nested objects as you need.
 If the code becomes too cumbersome you can seperate the components into sub objects, and reference them from your template object. For example:
-* `content`: is used to set the element's text content.
-* `helper`: to define a "Helper" function for this element (see below for details).
-* `bind`: is used for 2-way data binding (see below).
-* `dsrc`: This is a special property you can include inside an `attributes` object, it is used when the `src` attribute of an `img` element contains a dynamic data variable (see below for more information).
-
 ```javascript
 var TodoItemContent = {
 	title: { element: "input", attributes: { type:"text" },
@@ -62,6 +57,11 @@ var template = {
    element: "div", classes:"todoItem", children: TodoItemContent 
 }
 ```
+* `content`: is used to set the element's text content.
+* `helper`: to define a "Helper" function for this element (see below for details).
+* `bind`: is used for 2-way data binding (see below).
+* `dsrc`: This is a special property you can include inside an `attributes` object, it is used when the `src` attribute of an `img` element contains a dynamic data variable (see below for more information).
+
 
 As you can see, each element definition must be an object defined under a named property (`title` is the name of the first element, `editButton` is the name of the second and so on), witch the exception of the root element. The name of the root element is the name of the component (see below). There should always be exactly one root element.
 The `content` property is used to specify the text content of an element.
