@@ -199,7 +199,7 @@ There are also shortcut aliases for the rendering functions:
 To add user interaction to your component, you define an `events` object.
 The `events` object is built from standard DOM event names on its "outer layer" and event functions for each component on its "inner layer". The properties for the event functions are the "names" of the elements as defined in the `template` defintion.
 
-for example, to define an event to the `Edit` button:
+for example, to define a `click` event for the `Edit` button:
 ```javascript
 var events = { 
     click: {
@@ -221,7 +221,7 @@ When rendered, all elements in the component will always have two special object
 
 `context` is a reference to the data context used when rendering the component, you can read and write from it.
 
-When defining the events inside a closure, add it the `return` part: 
+When defining the events inside a closure, add it to the `return` part: 
 
 ```javascript
 return {
@@ -230,10 +230,10 @@ return {
   events: events
 }
 ```
-When you load the component, you will also see the 'events' object under
+When you load the component, you will also see the `events` object under
 `ZOE.TodoItem`, in the memory.
 
-For example, let's have the click event for the `Edit` button,  remove the `readonly` attribute from the title element, and let's also add an handler for the `change` event of the `title` element, bringing back the `readonly` attribute once the user has finished editing the text:
+For example, let's have the `click` event for the `Edit` button,  remove the `readonly` attribute from the title element, and let's also add an handler for the `change` event of the `title` element, bringing back the `readonly` attribute once the user has finished editing the text:
 
 ```javascript
 var events = { 
@@ -377,7 +377,7 @@ Notice the `id` property.
 
 All of the data needed for the repeater is in the array `TodoItemsData` - 
 note that you must give it that name, since the name of the repeater element in the template is `TodoItems` - 
-ZOE will automatically look for an object called `TodoItemsData` (i.e. [element-name]Data) inside the data context, 
+ZOE will automatically look for an object called `TodoItemsData` (i.e. `[*element-name*]Data`) inside the data context, 
 and will use it for the data context of the repeater.
 
 Now you can simply call `render` one time:
