@@ -141,7 +141,7 @@ else {
 }
 ```
 
-This will make one TodoItem appear in the document.
+This will make one `TodoItem` appear in the document.
 
 ### Data 
 There will usually be some data involved in your app.
@@ -156,7 +156,7 @@ Data variables can be used in the `attributes` object and in the `content` prope
 otherwise, once the component is loaded in memory and a "prototype" element is created - on some browsers Javascript will try to actually load the image (with its `src` attribute being the unresolved dynamic variable) and the console may yield an "*404 not found*" message. 
 Using `dsrc` will make sure the image will only be loaded upon rendering, after the data variable has been resolved).
 
-For example, let's replace the `content` part of the `title` element with a variable:
+For example, let's replace the `value` part of the `title` element with a variable:
 `title: { element: "input", attributes: { type: "text", readonly: "readonly", value: "@todoTitle"} },`
 
 Now use a data context with the rendering function:
