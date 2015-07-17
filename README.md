@@ -43,13 +43,13 @@ Each object in the template defines an HTML element, and can have several proper
 * `element`: is used to specify the name of the HTML element.
 * `attributes`: is an object containting attributes for the HTML element (in the form of attribtueName:"attributeValue").
 * `dattributes`: if you'd like the element to have `data-` attributes, use the `dattributes` object. .e.g `dattributes: {index:"1"}`, will create this attribute on the element: `data-index="1"`.
-`classes`: is used to specify class names for the element (the value for the `class` attribute)
-`children`: is used to define the element's children. You can have as much nested objects as you need.
+* `classes`: is used to specify class names for the element (the value for the `class` attribute)
+* `children`: is used to define the element's children. You can have as much nested objects as you need.
 If the code becomes too cumbersome you can seperate the components into sub objects, and reference them from your template object. For example:
-`content`: is used to set the element's text content.
-`helper`: to define a "Helper" function for this element (see below for details).
-`bind`: is used for 2-way data binding (see below).
-`dsrc`: This is a special property you can include inside an `attributes` object, it is used when the `src` attribute of an `img` element contains a dynamic data variable (see below for more information).
+* `content`: is used to set the element's text content.
+* `helper`: to define a "Helper" function for this element (see below for details).
+* `bind`: is used for 2-way data binding (see below).
+* `dsrc`: This is a special property you can include inside an `attributes` object, it is used when the `src` attribute of an `img` element contains a dynamic data variable (see below for more information).
 
 ```javascript
 var TodoItemContent = {
