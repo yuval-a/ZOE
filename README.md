@@ -72,17 +72,18 @@ Except a `template` object, ZOE also requires a `name` for the entire component.
 TodoItem = (function () {
 
   var template = {
-    element: "div", classes: "todoItem", children: {
-      title: { element: "input", attributes: { type:"text" }, content: "Description of to do item" },
-	    editButton: { element: "button", content: "Edit" },
+  	element: "div", classes: "todoItem", children: {
+            title:        { element: "input",  attributes: { type:"text" }, content: "Description of to do item" },
+	    editButton:   { element: "button", content: "Edit" },
 	    deleteButton: { element: "button", content: "Delete" }
-    }
+       }
   }
 
   return {
     name: "TodoItem",
     template: template
   }
+  
 })();
 ```
 
