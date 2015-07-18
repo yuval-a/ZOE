@@ -5,7 +5,7 @@ ZOE - a lightweight, no HTML, MVC-style, Javascript library.
 **ZOE** (stands for Zero html Object Engine) is a lightweight (~3KB minified) "MVC-style" Javascript library that
 lets you create reusable "web components" quickly and easily.
 
-**Minium requirements**:
+**Minimum requirements**:
 * Google Chrome, any version,
 * Firefox, version 4.0 or above,
 * Internet Explorer, version 9.0 or above.
