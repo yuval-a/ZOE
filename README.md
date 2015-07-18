@@ -230,10 +230,8 @@ return {
   events: events
 }
 ```
-When you load the component, you will also see the `events` object under
-`ZOE.TodoItem`, in the memory.
 
-For example, let's have the `click` event for the `Edit` button,  remove the `readonly` attribute from the title element, and let's also add an handler for the `change` event of the `title` element, bringing back the `readonly` attribute once the user has finished editing the text:
+For example, let's have the `click` event for the `Edit` button,  remove the `readonly` attribute from the `title` element, and let's also add an handler for the `change` event of the `title` element, bringing back the `readonly` attribute once the user has finished editing the text:
 
 ```javascript
 var events = { 
