@@ -375,7 +375,7 @@ Notice the `id` property.
 
 All of the data needed for the repeater is in the array `TodoItemsData` - 
 note that you must give it that name, since the name of the repeater element in the template is `TodoItems` - 
-ZOE will automatically look for an object called `TodoItemsData` (i.e. `[*element-name*]Data`) inside the data context, 
+ZOE will automatically look for an object called `TodoItemsData` (i.e. `[element-name]Data`) inside the data context, 
 and will use it for the data context of the repeater.
 
 Now you can simply call `render` one time:
