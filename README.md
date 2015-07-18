@@ -31,11 +31,11 @@ This also saves the "overhead" of parsing HTML and then creating a Javscript DOM
 
 ```javascript
 var template = {
-  element: "div", classes: "todoItem", children: {
-    title: { element: "input", attributes: { type:"text" },
-	  editButton: { element: "button", content: "Edit" },
-	  deleteButton: { element: "button", content: "Delete" }
-  }
+     element: "div", classes: "todoItem", children: {
+          title: { element: "input", attributes: { type:"text" } },
+          editButton: { element: "button", content: "Edit" },
+          deleteButton: { element: "button", content: "Delete" }
+     }
 }
 ```
 
