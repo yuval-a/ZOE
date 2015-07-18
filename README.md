@@ -48,7 +48,7 @@ Each object in the template defines an HTML element, and can have several proper
 If the code becomes too cumbersome you can seperate the components into sub objects, and reference them from your template object. For example:
 ```javascript
 var TodoItemContent = {
-	title: { element: "input", attributes: { type:"text" },
+	title: { element: "input", attributes: { type:"text" } },
 	editButton: { element: "button", content: "Edit" },
 	deleteButton: { element: "button", content: "Delete" }
 }
