@@ -73,7 +73,7 @@ TodoItem = (function () {
 
    var template = {
       element: "div", classes: "todoItem", children: {
-            title:        { element: "input",  attributes: { type:"text" }, content: "Description of to do item" },
+            title:        { element: "input",  attributes: { type:"text", value: "Description of to do item" } },
 	    editButton:   { element: "button", content: "Edit" },
 	    deleteButton: { element: "button", content: "Delete" }
        }
