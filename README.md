@@ -182,7 +182,7 @@ Whenever the value of the element changes - then it is automatically assigned to
 For example, if we would want to automatically save changes in the `title` element to the data context,
 we can define inside the data context another empty object, e.g. `updatedItem: {}`,
 add the "bind" property to the `title` definition in the template object:
-`bind: updatedItem`
+`bind: "updatedItem"`
 Now whenever a change is being made to the value of `title` - the changed value will be updated inside the data context, in `updateItem.title` .
 
 
