@@ -326,7 +326,7 @@ TodoList = (function () {
             header: { element: "h1", content: "My To Do List" },
             TodoItems: { element: "ul", helper: "Repeater", children: {
                 todoItem: { element: "li", dattributes: {index:"@id"},children: {
-                    title: { element: "input", attributes: { type: "text", readonly: "readonly", value: "@todoTitle" }, bind: "newtodo" },
+                    title: { element: "input", attributes: { type: "text", readonly: "readonly", value: "@todoTitle" } },
                     editButton: { element: "button", content: "Edit" },
                     deleteButton: { element: "button", content: "Delete" }
                 }}
