@@ -1,5 +1,5 @@
 # ZOE
-ZOE - a lightweight, no HTML, MVC-style, Javascript library.
+ZOE - a lightweight (under 4KB), no HTML, MVC-style, Javascript library.
 
 ## Introduction
 **ZOE** (stands for Zero html Object Engine) is a lightweight (~3KB minified) "MVC-style" Javascript library that
