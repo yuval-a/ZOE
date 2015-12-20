@@ -68,7 +68,7 @@ var template = {
 As you can see, each element definition must be an object defined under a named property (`title` is the name of the first element, `editButton` is the name of the second and so on), with the exception of the root element. The name of the root element is the name of the component (see below). There should always be exactly one root element.
 The `content` property is used to specify the text content of an element.
 
-Except a `template` object, ZOE also requires a `name` for the entire component. The minimum requirement for ZOE to build a component is a `template` and a `name`. As a best practice it is recommended for a compoenent to be defined as a "closure":
+Except a `template` object, ZOE also requires a `name` for the entire component. The minimum requirement for ZOE to build a component is a `template` and a `name`. As a best practice it is recommended for a compoenent to be defined as a "closure", in a "self yielded anonymous function":
 
 ```javascript
 TodoItem = (function () {
