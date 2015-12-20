@@ -4,7 +4,7 @@ ZOE is a lightweight (under 4KB), pure Javascript (no dependencies), MVVM librar
 To see a demo of an app made with ZOE, in action, visit: http://www.yfactor.co.il/crowdplaylist/
 
 ## Introduction
-**ZOE** (stands for Zero html Object Engine) is a lightweight (~3KB minified) "MVC-style" Javascript library that
+**ZOE** (stands for Zero html Object Engine) is a lightweight (~3KB minified) MVVM Javascript library that
 lets you create reusable "web components" quickly and easily.
 
 **Minimum requirements**:
