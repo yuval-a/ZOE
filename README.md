@@ -215,6 +215,7 @@ Events in ZOE are triggered by auto implementing "Event Delegation". When a comp
 
 The `this` context inside the event function - is always the target element for the event (the element that triggered the event). The standard Javascript `Event` object is also available, and is passed to the function as the first argument.
 
+#### Accessing DOM children elements, and data properties
 When rendered, all elements in the component will always have two special objects, attached to them: 
 `ref` and `context`.
 
