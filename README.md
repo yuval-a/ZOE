@@ -221,6 +221,8 @@ When rendered, all elements in the component will always have two special object
 
 `ref` is an object containing references to **ALL** elements in the entire component. This means you can quickly access any other element in the component, without having to call DOM query functions such as
 `document.GetElementById`, or `document.querySelector`.
+So if you have a child element named `myChild', you could access directly with `ref.myChild`.
+Note, you can access the **root** element of the component by using the `root` property of `ref` (`ref.root`).
 
 `context` is a reference to the data context used when rendering the component, you can read and write from it.
 
