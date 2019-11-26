@@ -408,6 +408,42 @@ This works because there is also a `render` function defined under the `ZOE` obj
 The second loop is for "cleaning up" all the child "prototype" elements.
 
 
+**NEW IN VERSION 0.2**:
+### Built-in repeater
+Since "repeating" a rendered element (each with different data) is a common task - a built-in repeater is now implemented into version 0.2 of ZOE.
+To use it, add a `repeat` attribute to a parent component, whose children you want to be repeated.
+The value of the `repeat` attribute should be the name of a data context property, containing *an array* of data objects.
+Each child of the repeater will be rendered for each item in that array, using that item as the data-context object for rendering that child.
+Each rendered child will also automatically have a `data-repeat-key` attribute added it when rendered, with its value equal to its index in the rendered tree.
+
+For example, for using it to compile a "Todo-list" - similar to the example above, the new template might look like this:
+
+```javascript
+var template = {
+	element: "div", children: {
+	    header: { element: "h1", content: "My To Do List" },
+	    TodoItems: { element: "ul", repeat:"todoItems", children: {
+		todoItem: { element: "li", children: {
+		    title: { element: "input", attributes: { type: "text", readonly: "readonly", value: "@todoTitle" } },
+		    editButton: { element: "button", content: "Edit" },
+		    deleteButton: { element: "button", content: "Delete" }
+		}}
+	    }}
+	}
+    }
+```
+
+And the data context object when rendering might then have this:
+
+```javascript
+var data = {
+	todoItems: [
+		{todoTitle: "Feed the dog"},
+		{todoTitle: "Take out the garbage"}
+	]
+}
+```
+
 ### Styling the components
 You can use the `classes` property in the template and then style normally using style classes.
 You can also use an `id`, by putting it inside an `attributes` object (e.g. `attributes: {id:"theid"}` ).
@@ -431,6 +467,9 @@ you can call `rerender` from any element -
 to recreate itself and its children. This is usefull when making changes to the data context, in a way that would affect the actual child elements, and reflecting those changes.
 
 Calling `refresh` - will only affect the text content of the element and its children, and will not rebuild the elements. So if there are changes to variable values that were used in the `content` property of elements in the template - the text content will "refresh" with their new values.
+
+**NEW IN VERSION 0.2**: The `refresh` method now also refreshes the values of `value` attributes of elements - 
+this means that calling refresh will re-resolve data parameters used in both `content` properties (where the element's inner textual content is determined) - like before - *and also* re-resolve data parameters used for the `value` attribute of input elements.
 
 Let's update our app to enable users to delete items from the list:
 We'll add a `click` event for the `Delete` button:
