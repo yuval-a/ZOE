@@ -111,7 +111,7 @@
 
                   if ((keyIndex = attval.indexOf("@")) >= 0) {
                       att.nodeValue = attval.substring(0, keyIndex) + context[attval.substring(keyIndex + 1)];
-                      if (att.nodeName == "value") node.valueTemplate = att.nodeValue;
+                      if (att.nodeName == "value") node.valueTemplate = attval;
                   }
               }
               var textnode = node.firstChild;
@@ -129,7 +129,9 @@
               if (elem.firstChild !== undefined && elem.firstChild !== null && elem.firstChild.nodeType == 3 && elem.contentTemplate !== undefined)
                   elem.firstChild.textContent = dataBind(elem.contentTemplate, context);
 
-              if (elem.value) elem.value = "";
+              if (elem.value && elem.valueTemplate) {
+                  elem.value = dataBind(elem.valueTemplate, context);
+              }
               
               var isRepeater = (elem.getAttribute('data-repeater') !== null);
               for (var i = 0; i < elem.children.length; i++)
