@@ -180,15 +180,14 @@
               function renderTree(elem)
               {
                   // Call helper renderer if exists
-                  /*
                   var helper = elem.getAttribute('data-helper');
                   if (helper !== undefined && ZOE['helper' + helper] !== undefined)
                   {
                       var elemName = elem.getAttribute('data-name');
                       ZOE['helper' + helper].call(this, elem, context[elemName + "Data"]);
                   }
-                  */
 
+                  // Built in repeater
                   var repeater = elem.getAttribute('data-repeater');
                   if (repeater !== null && ZOE['helperRepeater'] !== undefined)
                   {
