@@ -418,6 +418,8 @@ This works because there is also a `render` function defined under the `ZOE` obj
 Notice the addition of a repeatKey to the data context for each child, this is done so that each child will have a unique identity (to make it easier to style, etc.)
 The second loop is for "cleaning up" all the child "prototype" elements.
 
+It's important to understand that Helper functions works on the passed prototype element passed **itself**, 
+and that the result of the modified element should still be a **prototype**, as after the element goes through a Helper, it is then rendered "normally" via ZOE.
 
 **NEW IN VERSION 0.2**:
 ### Built-in repeater
