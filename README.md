@@ -306,8 +306,10 @@ ZOE.helperRepeater = function (repeater, repeaterContext)
 {
       var rlen = repeater.children.length, c;
       for (c = 0, clen = repeaterContext.length; c < clen; c++)
-        for (var i = 0; i < rlen; i++)
+        for (var i = 0; i < rlen; i++) {
+	    repeaterContext[c].repeatKey = String(c);
             repeater.appendChild(ZOE.render(repeater.children[i], repeaterContext[c]));
+       }
 
       for (c = 0; c < rlen; c++)
         repeater.removeChild(repeater.firstChild);
@@ -400,6 +402,7 @@ ZOE.helperRepeater = function (repeater, repeaterContext)
       var rlen = repeater.children.length, c;
       for (c = 0, clen = repeaterContext.length; c < clen; c++)
         for (var i = 0; i < rlen; i++)
+	    repeaterContext[c].repeatKey = String(c);
             repeater.appendChild(ZOE.render(repeater.children[i], repeaterContext[c]));
 
       for (c = 0; c < rlen; c++)
@@ -412,6 +415,7 @@ For each item in the data context:
     render a new element, and append it as a child to the repeater element.
 
 This works because there is also a `render` function defined under the `ZOE` object, which can receive a DOM element "prototype" as its argument (and a data context as the second), and render an instance of it.
+Notice the addition of a repeatKey to the data context for each child, this is done so that each child will have a unique identity (to make it easier to style, etc.)
 The second loop is for "cleaning up" all the child "prototype" elements.
 
 
