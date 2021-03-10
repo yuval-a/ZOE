@@ -91,7 +91,10 @@ TodoItem = (function () {
 
 ### Loading the component
 You use the `ZOE.load` function to build your component. Pass the closure you defined to the function:
-`ZOE.load (TodoItem);`
+```javascript
+ZOE.load (TodoItem);
+```
+
 Once the `TodoItem` component is loaded - there will be a new object under the ZOE object in memory: 
 `ZOE.TodoItem`, and under that there will be an `element` object - that element object is a DOM object representing the "prototype" of the component in DOM form, and is used when rendering instances from it to the document.
 You can also see the `render` function, which is used to render an instance of the component to a new DOM element, ready to be attached to your document. Each component will have its own `render` function.
@@ -187,6 +190,9 @@ add the "bind" property to the `title` definition in the template object:
 `bind: "updatedItem"`
 Now whenever a change is being made to the value of `title` - the changed value will be updated inside the data context, in `updateItem.title` .
 
+##### Reactive Properties
+*New in version 0.3*: you can reference properties from the data context, prefixed with an ampersand(`&`) - these properties will be "reactive", in the sense that 
+if their value changes in the data context, the component using that property will be rerendered automatically (taking into consideration the updated data context).
 
 #### More on rendering
 If you want the rendering function to not block the execution, and go to the next statement, there is an alternate rendering function called `renderAsync(datacontext, renderCallback)`,
@@ -315,6 +321,7 @@ Once an helper is defined on an element, when it is rendered (e.g. as part of th
 then instead of following the normal rendering execution code, control is passed to the helper function.
 Two arguments are passed to the function. The first is the repeater "prototype" DOM element (similar to the `element` object created in memory after loading a component),
 and the second is a "sub" data context. This sub data context, is an object that should be defined inside the "global" data context for the component, and its name must be the name of the element where the helper was defined for.
+Helper functions will also be available under the global `ZOE` object.
 
 Let's redefine the "to do list" template, to use the helper repeater.
 We'll recreate the component, to encapsulate everything related to the app (including the title), and we'll call it `TodoList` this time.
@@ -443,6 +450,8 @@ var data = {
 	]
 }
 ```
+### `ZOE.render`
+The `ZOE` global object also exposes a global `render` function, that can receive a "prototype element" as the first argument, a data context as the second argument, and returns a rendered component.
 
 ### Styling the components
 You can use the `classes` property in the template and then style normally using style classes.
